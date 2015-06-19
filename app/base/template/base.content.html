@@ -1,0 +1,17 @@
+<div class="col m8 l9">
+    
+    <div class="content">
+        <div class="abas">
+            <span class="aba noselect mFadeLeft" ng-repeat="livro in livros track by $index" ng-class="{'active':$index == abaAtual}" 
+                  ng-click="openTab($index)">
+                {{livro.titulo}}
+                <i class="mdi-content-clear red-text" ng-click="removeTab($index)"></i>
+            </span>
+        </div>
+        <div ng-if="livros.length == 0">
+            <span class="center-align nenhum">Nenhum item selecionado</span>
+        </div>
+
+        <base-tab-content class="mFade" ng-repeat="livro in livros track by $index" ng-show="abaAtual == $index" index="$index" array="livro"></base-tab-content>
+    </div>
+</div>

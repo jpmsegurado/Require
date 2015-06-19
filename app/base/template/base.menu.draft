@@ -1,0 +1,19 @@
+<ul class="collapsible">
+    <li ng-repeat="item in menu">
+        
+        <div class="collapsible-header blue-text menu-lat-item" ng-if="item.submenu == undefined" ng-click="addLivro($index)">
+            {{item.titulo}}
+        </div>
+        
+        <div class="collapsible-header blue-text menu-lat-item" ng-if="item.submenu != undefined" ng-click="changeIndex($index)">
+            <span>{{item.titulo}}</span>
+            <i ng-class="{'mdi-hardware-keyboard-arrow-right':showIndex[$index] == 0 || showIndex[$index] == undefined, 'mdi-hardware-keyboard-arrow-down':showIndex[$index] > 0}"></i>
+        </div>
+        <div class="collapsible-body animated slideInDown" ng-if="showIndex[$index] > 0 && item.submenu != undefined">
+            <ul class="submenu">
+                <li ng-repeat="subitem in item.submenu" ng-click="addLivroSub($index,$parent.$index)"><a>{{subitem.titulo}}</a></li>
+            </ul>
+        </div>
+        
+    </li>
+</ul>

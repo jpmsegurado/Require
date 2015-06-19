@@ -1,0 +1,23 @@
+<ul class="myMenu blue-text noselect">
+    
+    <li ng-repeat="item in menu" ng-if="item.submenu == undefined" ng-click="addLivro($index)">
+        <p ng-bind="item.titulo"></p>
+    </li>
+    
+    <li ng-repeat="item in menu" ng-if="item.submenu != undefined" ng-click="changeIndex($index)">
+        <p ng-bind="item.titulo"></p>
+        <i ng-class="{'mdi-hardware-keyboard-arrow-right':$index != index, 'mdi-hardware-keyboard-arrow-down':$index == index}"></i>
+        <!--
+
+        <i ng-class="{'mdi-hardware-keyboard-arrow-right':showIndex[$index] == 0 || showIndex[$index] == undefined, 'mdi-hardware-keyboard-arrow-down':showIndex[$index] > 0}"></i>
+        <ul class="mySubMenu mFadeDown" ng-if="showIndex[$index] > 0 && item.submenu != undefined">
+
+        -->
+        <ul class="mySubMenu" ng-if="$index == index">
+            <li ng-repeat="subitem in item.submenu" ng-click="addLivroSub($index,$parent.$index); $event.stopPropagation();">
+                <p class="mySubP" ng-bind="subitem.titulo"></p>
+            </li>
+        </ul>
+        
+    </li>
+</ul>

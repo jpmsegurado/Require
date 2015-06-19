@@ -1,0 +1,237 @@
+body{
+    background-color: #efefef !important;
+}
+
+img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.fleft{
+    float: left;
+    width: 100%;
+}
+
+.abas::-webkit-scrollbar { width: 3px; height: 5px;}
+.abas::-webkit-scrollbar-button {  background-color: #666; }
+.abas::-webkit-scrollbar-track {  background-color: #999;}
+.abas::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+.abas::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+.abas::-webkit-scrollbar-corner { background-color: #999;}}
+.abas::-webkit-resizer { background-color: #666;}
+
+.abas {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-height: 42px;
+    display: -webkit-box;
+    display: -moz-box;
+    width:100%;
+    border-bottom: solid 1px #e0e0e0;
+}
+
+.aba{
+    padding: 8px 20px 10px 20px;
+    background: #e0e0e0;
+    height:42px;
+    display: block;
+    position: relative;
+    border-top-left-radius:  5px;
+    border-top-right-radius: 5px;
+    border: solid 1px #CCC;
+    cursor: pointer;
+    margin: 0px 2px;
+    top: 2px;
+    text-align: center;
+}
+
+.aba:hover{
+    background-color: #EFEFEF;
+    border: solid 1px #e0e0e0;
+}
+
+.aba.active{
+    background-color: #fff;
+    border-bottom: 0px;
+}
+
+.aba i{
+    font-size: 15px;
+    position: relative;
+    left: 15px;
+    top: -7px;
+}
+
+.content{
+    border: solid 1px #e0e0e0;
+    background-color: #fff;
+    margin-top: 7px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.nenhum{
+    display: block;
+    width: 100%;
+    margin: 50px 0px;
+    font-size: 30px;
+}
+
+.collapsible-body{
+    display: block !important;
+}
+
+
+.submenu li{
+    padding: 10px;
+    padding-left: 30px;
+}
+
+.menu-lat-item:hover, .menu-lat-item.active, .submenu li:hover{
+    background-color: #dcdcdc !important;
+    transition: 0.3s !important;
+    cursor: pointer;
+}
+
+.menu-lat-item{
+    min-height: 3rem !important;
+}
+
+.menu-lat-item i {
+    float:right;
+}
+
+.menu-lat-item span{
+    width:80%;
+    float: left;
+}
+
+.myMenu{
+    float:left;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-bottom: 0px;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+.myMenu li{
+    float:left;
+    border-bottom:solid 1px #ddd;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.myMenu li:last-child{
+    border: 0px !important;
+}
+
+.myMenu  li p{
+    padding: 0px 20px !important;
+    height: auto !important;
+    float: left;
+    height: 100%;
+    width: 80%;
+}
+
+.myMenu i{
+    float:left;
+    width: 20%;
+    text-align: center;
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.myMenu  li:hover{
+    background-color: #ECECEC;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.mySubMenu{
+    background-color: #e0e0e0;
+    float:left;
+    width: 100%;
+}
+
+.mySubMenu  li{
+    float:left;
+    padding: 0px 20px 0px 40px !important;
+    width: 100%;
+    height: auto !important;
+    border: 0px !important;
+}
+
+.mySubMenu li:hover{
+    background-color: #d0d0d0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.mySubP{
+    padding: 0px !important;
+    float: left;
+    width: 100%;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+}
+
+.mFadeDown.ng-enter, .mFadeDown.ng-move{
+	-webkit-animation:     fadeInDown 0.3s;
+	-moz-animation:        fadeInDown 0.3s;
+	-o-animation:          fadeInDown 0.3s;
+	animation:             fadeInDown 0.3s;
+}
+
+.mFadeDown.ng-leave{
+	-webkit-animation: fadeOutUp 0.3s;
+	-moz-animation:    fadeOutUp 0.3s;
+	-o-animation:      fadeOutUp 0.3s;
+	animation:         fadeOutUp 0.3s;
+}
+
+.mySubMenu.ng-enter{
+	-webkit-animation:     fadeInDown 0.15s;
+	-moz-animation:        fadeInDown 0.15s;
+	-o-animation:          fadeInDown 0.15s;
+	animation:             fadeInDown 0.15s;
+}
+
+.mySubMenu.ng-leave{
+	-webkit-animation: fadeOutUp 0.15s;
+	-moz-animation:    fadeOutUp 0.15s;
+	-o-animation:      fadeOutUp 0.15s;
+	animation:         fadeOutUp 0.15s;
+}
+
+.mFadeLeft.ng-enter, .mFadeLeft.ng-move{
+	-webkit-animation:     fadeInLeft 0.3s;
+	-moz-animation:        fadeInLeft 0.3s;
+	-o-animation:          fadeInLeft 0.3s;
+	animation:             fadeInLeft 0.3s;
+}
+
+.mFadeLeft.ng-leave{
+	-webkit-animation: fadeOutLeft 0.3s;
+	-moz-animation:    fadeOutLeft 0.3s;
+	-o-animation:      fadeOutLeft 0.3s;
+	animation:         fadeOutLeft 0.3s;
+}
+
+.mFade.ng-enter{
+	-webkit-animation:     fadeIn 0.3s;
+	-moz-animation:        fadeIn 0.3s;
+	-o-animation:          fadeIn 0.3s;
+	animation:             fadeIn 0.3s;
+}
+
