@@ -1,6 +1,10 @@
 define([], function()
 {
-    var BaseMenuController = ['$scope','$rootScope',function($scope,$rootScope){
+    var BaseMenuController = ['$scope','$rootScope','$alert',function($scope,$rootScope,$alert){
+        
+        $('.collapsible').collapsible({
+            accordion : false
+        });
         
         var form1 = [
             {nome:"Nome",tipo:"text"},
@@ -16,7 +20,7 @@ define([], function()
         ];
         
         var form3 = [
-            {nome:"Data",tipo:"text"},
+            {nome:"Data",tipo:"text",mask:"99/99/9999"},
             {nome:"Valor",tipo:"text",moneymask:"2"}
         ];
         

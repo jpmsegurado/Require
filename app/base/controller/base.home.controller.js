@@ -1,7 +1,7 @@
 define([], function()
 {
-    var BaseHomeController = ['$scope','$rootScope','$animate',
-    function($scope,$rootScope,$animate){
+    var BaseHomeController = ['$scope','$rootScope','$alert',
+    function($scope,$rootScope,$alert){
         
 
     }];

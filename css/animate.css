@@ -14,6 +14,13 @@ Copyright (c) 2015 Daniel Eden
   animation-fill-mode: both;
 }
 
+.fast-animated{
+    -webkit-animation-duration: 0.3s;
+  animation-duration:           0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
 .animated.infinite {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
@@ -1472,6 +1479,8 @@ Copyright (c) 2015 Daniel Eden
     transform: translate3d(0, 100%, 0);
   }
 }
+
+
 
 @keyframes fadeOutDown {
   0% {

@@ -1,30 +1,34 @@
 <div class="conteudo-aba">
     <div class="row">
-        <form class="col m12 l9" id="form{{index}}">
-            <div class="input-field col s12" ng-repeat="item in array.form track by $index">
-                
-                <span ng-class="{'blue-text':focus == $index,'grey-text':focus != $index}"> {{item.nome}}</span>
-                
-                <input id="{{item.nome}}{{index}}" ng-model="models[$index]" type="{{item.tipo}}" ng-if="item.tipo == 'text' && item.mask == undefined && item.moneymask == undefined" ng-focus="changeFocus($index)">
-                
-                <input id="{{item.nome}}{{index}}" ng-model="models[$index]" type="{{item.tipo}}" 
-                       ng-if="item.tipo == 'text' && item.mask != undefined && item.moneymask == undefined" ui-mask="{{item.mask}}" ng-focus="changeFocus($index)">
-                
-                <input id="{{item.nome}}{{index}}" ng-model="models[$index]" type="{{item.tipo}}" money min="1"
-                       ng-if="item.tipo == 'text' && item.mask == undefined && item.moneymask != undefined" ng-focus="changeFocus($index)">
-                
-                <input id="{{item.nome}}{{index}}" ng-model="models[$index]" type="{{item.tipo}}" ng-if="item.tipo == 'number'"
-                       onkeyup="if (!this.value.match(/[0-9]/)) {this.value = this.value.replace(/[^0-9]/g, '');}"
-                       ng-focus="changeFocus($index)"
-                       >
-                <br>
+        <form class="col m12 l9">
+            <div class="row">
+                <div class="input-field col s12" ng-repeat="item in array.form track by $index">
+
+                    <span ng-class="{'blue-text':focus == $index,'grey-text':focus != $index}"> {{item.nome}}</span>
+
+                    <input id="{{item.nome}}{{index}}" ng-model="models[$index]" type="{{item.tipo}}" ng-if="item.tipo == 'text' && item.mask == undefined && item.moneymask == undefined" ng-focus="changeFocus($index)" ng-keydown="$event.keyCode == 13 && printModels(showDanger)">
+
+                    <input id="{{item.nome}}{{index}}" ng-model="models[$index]" type="{{item.tipo}}" 
+                           ng-if="item.tipo == 'text' && item.mask != undefined && item.moneymask == undefined" ui-mask="{{item.mask}}" 
+                           ng-focus="changeFocus($index)" ng-keydown="$event.keyCode == 13 && printModels(showDanger)">
+
+                    <input id="{{item.nome}}{{index}}" ng-model="models[$index]" type="{{item.tipo}}" money min="1"
+                           ng-if="item.tipo == 'text' && item.mask == undefined && item.moneymask != undefined" 
+                           ng-focus="changeFocus($index)" ng-keydown="$event.keyCode == 13 && printModels(showDanger)">
+
+                    <input id="{{item.nome}}{{index}}" ng-model="models[$index]" type="{{item.tipo}}" ng-if="item.tipo == 'number'"
+                           onkeyup="if (!this.value.match(/[0-9]/)) {this.value = this.value.replace(/[^0-9]/g, '');}"
+                           ng-focus="changeFocus($index)" ng-keydown="$event.keyCode == 13 && printModels(showDanger)"
+                           >
+                    <br>
+                </div>
             </div>
-            <div class="col s12">
+            <div class="col s12 center-align">
                 <a class="waves-effect waves-light btn green lighten-1" ng-click="printModels(showDanger)">
                     <i class="mdi-action-done left"></i>
                     SALVAR
                 </a>
-                <a class="waves-effect waves-light btn red lighten-1">
+                <a class="waves-effect waves-light btn red lighten-1" ng-click="deletar()">
                     <i class="mdi-content-clear left"></i>
                     DELETAR
                 </a>

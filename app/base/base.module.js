@@ -7,7 +7,8 @@ define(['angular',
         'base/directive/base.menu.directive',
         'base/directive/base.content.directive',
         'base/directive/base.tab.content.directive',
-        'base/directive/base.animate.directive'
+        'base/directive/base.animate.directive',
+        'base/service/base.alert.service'
        ],
 function( angular,
           BaseRestService,
@@ -18,7 +19,8 @@ function( angular,
           BaseMenuDirective,
           BaseContentDirective,
           BaseTabContentDirective,
-          BaseAnimateDirective
+          BaseAnimateDirective,
+          BaseAlertService
           )
   {
       var BaseModule = angular.module('BaseModule',[]);
@@ -32,6 +34,8 @@ function( angular,
       BaseModule.directive('baseContentDirective',BaseContentDirective);
       BaseModule.directive('baseTabContent',BaseTabContentDirective);
       BaseModule.directive('animate',BaseAnimateDirective);
+      BaseModule.service('$alert',BaseAlertService);
+
 
       return BaseModule;
   }

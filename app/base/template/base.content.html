@@ -12,6 +12,6 @@
             <span class="center-align nenhum">Nenhum item selecionado</span>
         </div>
 
-        <base-tab-content class="mFade" ng-repeat="livro in livros track by $index" ng-show="abaAtual == $index" index="$index" array="livro"></base-tab-content>
+        <base-tab-content ng-repeat="livro in livros track by $index" ng-show="abaAtual == $index" index="$index" array="livro"></base-tab-content>
     </div>
 </div>

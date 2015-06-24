@@ -1,8 +1,8 @@
 define([], function()
 {
     
-    var BaseTabContentController = ['$scope',
-    function($scope){
+    var BaseTabContentController = ['$scope','$alert',
+    function($scope,$alert){
         
         
         $scope.models = [];
@@ -17,6 +17,7 @@ define([], function()
             },3000);
         }
         
+        
         $scope.focus = -1;
         
         $scope.changeFocus = function(index){
@@ -30,7 +31,7 @@ define([], function()
             }
             
             if($scope.models == [] || $scope.array.form.length > $scope.models.length){
-                showDanger();
+                $alert.showEmptyFieldAlert();
             }else{
                 $scope.data = [];
                 for(var i=0; i<$scope.models.length; i++){
@@ -38,18 +39,38 @@ define([], function()
                     var valor = $scope.models[i];
                     var obj = {valor:valor,nome:nome};
                     if(valor == undefined){
-                        showDanger();
+                        $alert.showEmptyFieldAlert();
                         return;
                     }
                     console.log(obj);
                     $scope.data.push(obj);
                 }
+                $alert.showSuccessAlert(function(){
+                    $scope.models = [];
+                    $alert.remove();
+                    $scope.$apply();
+                });
             }
             
         };
         
+        $scope.deletar = function(){
+            $alert.showDeletingAlert(function(){
+                console.log('sim');
+                $alert.remove();
+            },function(){
+                console.log('não');
+                $alert.remove();
+            });
+        };
+        
+        
         $scope.clear = function(){
             $scope.models = [];
+            $alert.showLoadingAlert();
+            setTimeout(function(){
+                $alert.remove();
+            },1700);
         };
 
     }];
